@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <!-- Optional App Logo -->
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Welcome Text -->
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to YourApp"
+        android:textSize="22sp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Button for Biometric Authentication -->
+    <Button
+        android:id="@+id/btn_biometric_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login with Biometric"
+        android:onClick="showBiometricPrompt"/>
+</LinearLayout>
+
