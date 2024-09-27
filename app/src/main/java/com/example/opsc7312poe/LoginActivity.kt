@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
         val emailEditText = findViewById<EditText>(R.id.emailEditText)
         val passwordEditText = findViewById<EditText>(R.id.passwordEditText)
         val loginButton = findViewById<Button>(R.id.loginButton)
-
+        val userName = emailEditText.text.toString()
         // Set up biometric authentication
         executor = ContextCompat.getMainExecutor(this)
         biometricPrompt = BiometricPrompt(this, executor, object : BiometricPrompt.AuthenticationCallback() {
@@ -40,9 +40,14 @@ class LoginActivity : AppCompatActivity() {
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                 super.onAuthenticationSucceeded(result)
                 Toast.makeText(applicationContext, "Authentication succeeded!", Toast.LENGTH_SHORT).show()
+                val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putString("username", userName)
+                editor.apply()
+
 
                 // Go to MainActivity after successful biometric authentication
-                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                val intent = Intent(this@LoginActivity, HomeFragment::class.java)
                 startActivity(intent)
                 finish()
             }
@@ -79,7 +84,11 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
 
                         // Go to MainActivity after successful login
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, Home::class.java)
+                        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
+                        editor.putString("username", email)
+                        editor.apply()// The hosting activity
                         startActivity(intent)
                         finish()
                     } else {
