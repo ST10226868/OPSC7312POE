@@ -8,29 +8,46 @@
     android:padding="16dp"
     android:background="@color/white">
 
-    <!-- Optional App Logo -->
-    <ImageView
-        android:id="@+id/login_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_marginBottom="20dp"/>
-
     <!-- Welcome Text -->
     <TextView
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to YourApp"
+        android:text="Login"
         android:textSize="22sp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Email EditText -->
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Password EditText -->
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Button for Email/Password Login -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login with Email and Password"
         android:layout_marginBottom="20dp"/>
 
     <!-- Button for Biometric Authentication -->
     <Button
         android:id="@+id/btn_biometric_login"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login with Biometric"
         android:onClick="showBiometricPrompt"/>
 </LinearLayout>
-
