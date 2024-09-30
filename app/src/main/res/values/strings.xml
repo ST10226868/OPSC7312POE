@@ -11,4 +11,8 @@
     <string name="surname">Surname</string>
     <string name="email">Email</string>
     <string name="student_number">Student Number</string>
+    <string name="help">HELP</string>
+    <string name="logout">LOGOUT</string>
+    <string name="new_chat">NEW CHAT</string>
+    <string name="chat">CHAT</string>
 </resources>

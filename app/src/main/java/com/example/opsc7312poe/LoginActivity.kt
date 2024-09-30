@@ -79,7 +79,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
 
                         // Go to MainActivity after successful login
-                        val intent = Intent(this, Settings::class.java)
+                        val intent = Intent(this, LatestMessagesActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {

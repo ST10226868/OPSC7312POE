@@ -72,6 +72,7 @@ class RegistrationActivity : AppCompatActivity() {
 
     private fun createUserDocument(userId: String, name: String, surname: String, studentNumber: String, email: String) {
         val userMap = hashMapOf(
+            "uid" to userId,
             "name" to name,
             "surname" to surname,
             "studentNumber" to studentNumber,

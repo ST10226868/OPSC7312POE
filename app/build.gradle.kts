@@ -27,12 +27,19 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    // Enable View Binding
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -45,15 +52,18 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    //Firebase
+    // Firebase
     implementation(libs.firebase.auth)
     implementation(libs.firebase.storage)
     implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.database.ktx)
 
-    //Custom styles
+    // Custom styles
     implementation("com.google.android.material:material:1.9.0")
     implementation("com.squareup.picasso:picasso:2.71828")
 
+    // ViewGenesis library
+    //implementation("com.github.chimbori:viewgenesis:3.1.1")
 
 
     testImplementation(libs.junit)
