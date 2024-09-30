@@ -44,7 +44,16 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    //Firebase
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.storage)
+    implementation(libs.firebase.firestore.ktx)
+
+    //Custom styles
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.squareup.picasso:picasso:2.71828")
+
 
 
     testImplementation(libs.junit)
