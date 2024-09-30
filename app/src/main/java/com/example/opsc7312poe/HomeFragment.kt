@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
@@ -18,13 +19,14 @@ class HomeFragment : Fragment() {
     private var param2: String? = null
 
     private lateinit var textView2: TextView
-    private lateinit var UserDisplay : TextView
+    private lateinit var UserDisplay: TextView
     private lateinit var APDS: TextView
     private lateinit var PROG: TextView
     private lateinit var OPSC: TextView
     private lateinit var XBCAD: TextView
     private lateinit var NWEG: TextView
     private lateinit var ITTP: TextView
+    private lateinit var addModuleButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,17 +43,16 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-
-        // Initialize TextViews
-        textView2 = view.findViewById(R.id.textView2)
+        // Initialize TextViews and Button
+        textView2 = view.findViewById(R.id.UserDisplay)
         APDS = view.findViewById(R.id.APDS)
         PROG = view.findViewById(R.id.PROG)
         OPSC = view.findViewById(R.id.OPSC)
         XBCAD = view.findViewById(R.id.XBCAD)
         NWEG = view.findViewById(R.id.NWEG)
         ITTP = view.findViewById(R.id.ITTP)
-
         UserDisplay = view.findViewById(R.id.UserDisplay)
+        addModuleButton = view.findViewById(R.id.addModuleButton)
 
         // Retrieve the username from SharedPreferences
         val sharedPreferences = requireContext().getSharedPreferences("user_prefs", MODE_PRIVATE)
@@ -69,6 +70,12 @@ class HomeFragment : Fragment() {
         // Show Toast on click for XBCAD
         XBCAD.setOnClickListener { showToast("XBCAD clicked") }
 
+        // Set click listener for the Add Module button
+        addModuleButton.setOnClickListener {
+            showToast("Add Module button clicked")
+            // Add your logic here to add a new module or navigate to a new screen for module addition
+        }
+
         return view
     }
 
@@ -79,6 +86,7 @@ class HomeFragment : Fragment() {
         }
         startActivity(intent)
     }
+
     // Helper function to show toast
     private fun showToast(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()

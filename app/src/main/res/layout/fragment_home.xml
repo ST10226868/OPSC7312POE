@@ -1,114 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        android:text="This is home fragment"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054" />
+        <TextView
+            android:id="@+id/UserDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome, User"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="16dp"/>
 
-    <TextView
-        android:id="@+id/APDS"
-        android:layout_width="129dp"
-        android:layout_height="61dp"
-        android:text="APDS"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
+        <!-- Modules TextViews -->
+        <TextView
+            android:id="@+id/APDS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="APDS"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"/>
 
-    <TextView
-        android:id="@+id/PROG"
-        android:layout_width="129dp"
-        android:layout_height="61dp"
-        android:text="PROG"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
+        <TextView
+            android:id="@+id/PROG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PROG"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"/>
 
-    <TextView
-        android:id="@+id/OPSC"
-        android:layout_width="129dp"
-        android:layout_height="61dp"
-        android:text="OPSC"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/OPSC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OPSC"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"/>
 
-    <TextView
-        android:id="@+id/XBCAD"
-        android:layout_width="129dp"
-        android:layout_height="61dp"
-        android:text="XBCAD"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/XBCAD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XBCAD"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"/>
 
-    <TextView
-        android:id="@+id/NWEG"
-        android:layout_width="129dp"
-        android:layout_height="61dp"
-        android:text="NWEG"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644" />
+        <TextView
+            android:id="@+id/NWEG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NWEG"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"/>
 
-    <TextView
-        android:id="@+id/ITTP"
-        android:layout_width="129dp"
-        android:layout_height="61dp"
-        android:text="ITTP"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644" />
+        <TextView
+            android:id="@+id/ITTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ITTP"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"/>
 
-    <TextView
-        android:id="@+id/UserDisplay"
-        android:layout_width="133dp"
-        android:layout_height="41dp"
-        android:text="Welcome"
-        app:layout_constraintBottom_toTopOf="@+id/APDS"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.443" />
+        <!-- Button to add modules -->
+        <Button
+            android:id="@+id/addModuleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Module"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:padding="10dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</ScrollView>
