@@ -21,6 +21,7 @@ class Settings : AppCompatActivity() {
     private lateinit var helpBtn: Button
     private lateinit var notificationBtn: Button
     private lateinit var languageBtn: Button
+    private lateinit var signOutBtn: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +39,7 @@ class Settings : AppCompatActivity() {
         helpBtn = findViewById(R.id.HelpBtn)
         notificationBtn = findViewById(R.id.NotificationBtn)
         languageBtn = findViewById(R.id.LanguageBtn)
+        signOutBtn = findViewById(R.id.signOut)
         
         loadProfilePicture()
 
@@ -46,6 +48,7 @@ class Settings : AppCompatActivity() {
         helpBtn.setOnClickListener { showToast("Coming soon") }
         notificationBtn.setOnClickListener { showToast("Coming soon") }
         languageBtn.setOnClickListener { showToast("Coming soon") }
+        signOutBtn.setOnClickListener { logoutAndCloseApp() }
 
     }
 
@@ -84,5 +87,11 @@ class Settings : AppCompatActivity() {
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun logoutAndCloseApp() {
+        FirebaseAuth.getInstance().signOut()
+        Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show()
+        finishAffinity() // Close the app
     }
 }
