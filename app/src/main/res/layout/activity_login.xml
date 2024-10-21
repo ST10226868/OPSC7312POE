@@ -8,6 +8,13 @@
     android:padding="16dp"
     android:background="@color/white">
 
+    <ImageView
+        android:id="@+id/Banner"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/banner" />
+
     <!-- Welcome Text -->
     <TextView
         android:id="@+id/welcome_text"
@@ -21,7 +28,7 @@
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:layout_marginBottom="10dp"/>
@@ -30,7 +37,7 @@
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:layout_marginBottom="20dp"/>
