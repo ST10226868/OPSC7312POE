@@ -16,6 +16,18 @@
         android:theme="@style/Theme.OPSC7312POE"
         tools:targetApi="31">
         <activity
+            android:name=".NewNoteView"
+            android:exported="false" />
+        <activity
+            android:name=".NotesView"
+            android:exported="false" />
+        <activity
+            android:name=".ModuleView"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
             android:exported="false" />
         <activity
