@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
     implementation(libs.firebase.firestore)
+    implementation ("androidx.fragment:fragment-ktx:1.5.1")
 
 
     testImplementation(libs.junit)

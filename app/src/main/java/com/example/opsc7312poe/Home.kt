@@ -15,7 +15,7 @@ class Home : AppCompatActivity() {
     private val settingsFragment = SettingsFragment()
     private val notificationFragment = NotificationFragment()
     private val homeFragment = HomeFragment()
-    private val calenderFragment = CalenderFragment()
+    private val calenderFragment = CalendarFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
