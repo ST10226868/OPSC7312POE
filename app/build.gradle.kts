@@ -48,7 +48,10 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(libs.firebase.firestore)
     implementation ("androidx.fragment:fragment-ktx:1.5.1")
+    implementation(libs.firebase.storage)
 
+    implementation ("com.squareup.picasso:picasso:2.71828")
+    implementation ("com.google.android.gms:play-services-auth:20.4.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
