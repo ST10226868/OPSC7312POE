@@ -24,8 +24,7 @@ class AccountSettings : AppCompatActivity() {
 
     private lateinit var pfpImage: ImageView
     private lateinit var studentNumber: EditText
-    private lateinit var firstName: EditText
-    private lateinit var LastName: EditText
+    private lateinit var userName: EditText
     private lateinit var emailEditText: EditText
     private lateinit var saveBtn: Button
     private lateinit var backBtn: Button
@@ -41,8 +40,7 @@ class AccountSettings : AppCompatActivity() {
         // Initialize views here after setContentView
         pfpImage = findViewById(R.id.pfpImage)
         studentNumber = findViewById(R.id.studentNumber)
-        firstName = findViewById(R.id.firstName)
-        LastName = findViewById(R.id.LastName)
+        userName = findViewById(R.id.userName)
         emailEditText = findViewById(R.id.emailEditText)
         saveBtn = findViewById(R.id.saveBtn)
         backBtn = findViewById(R.id.backBtn)
@@ -79,8 +77,7 @@ class AccountSettings : AppCompatActivity() {
                 .addOnSuccessListener { document ->
                     if (document != null) {
                         studentNumber.setText(document.getString("studentNumber"))
-                        firstName.setText(document.getString("name"))
-                        LastName.setText(document.getString("surname"))
+                        userName.setText(document.getString("name"))
                         emailEditText.setText(document.getString("email"))
 
                         // Load profile picture
@@ -118,15 +115,9 @@ class AccountSettings : AppCompatActivity() {
             val updatedData = hashMapOf<String, Any>()
 
             // Check for changes in editable fields, skip null or empty inputs
-            firstName.text?.let { newName ->
-                if (newName.isNotEmpty() && newName.toString() != (firstName.tag?.toString() ?: "")) {
+            userName.text?.let { newName ->
+                if (newName.isNotEmpty() && newName.toString() != (userName.tag?.toString() ?: "")) {
                     updatedData["name"] = newName.toString()
-                }
-            }
-
-            LastName.text?.let { newSurname ->
-                if (newSurname.isNotEmpty() && newSurname.toString() != (LastName.tag?.toString() ?: "")) {
-                    updatedData["surname"] = newSurname.toString()
                 }
             }
 
@@ -171,8 +162,7 @@ class AccountSettings : AppCompatActivity() {
             .addOnSuccessListener {
                 Toast.makeText(this, "User data updated successfully", Toast.LENGTH_SHORT).show()
                 // Update tags to reflect new values
-                firstName.tag = firstName.text.toString()
-                LastName.tag = LastName.text.toString()
+                userName.tag = userName.text.toString()
                 isProfilePictureChanged = false
             }
             .addOnFailureListener { e ->
