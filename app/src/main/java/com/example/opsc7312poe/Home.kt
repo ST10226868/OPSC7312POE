@@ -31,7 +31,15 @@ class Home : AppCompatActivity() {
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
-        replaceFragment(homeFragment)
+        when (this::class.java) {
+            Home::class.java -> bottomNav.menu.findItem(R.id.Home).isChecked = true
+        }
+
+
+        if (savedInstanceState == null) {
+            replaceFragment(homeFragment)
+        }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -39,19 +47,31 @@ class Home : AppCompatActivity() {
             insets
         }
 
-        bottomNav.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.Home -> replaceFragment(homeFragment)
-                R.id.Chat -> replaceFragment(chatFragment)
+        bottomNav.setOnItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.Home -> {
+                    replaceFragment(homeFragment)
+                    true
+                }
+                R.id.Chat -> {
+                    replaceFragment(chatFragment)
+                    true
+                }
+                R.id.Notification -> {
+                    replaceFragment(notificationFragment)
+                    true
+                }
+                R.id.Calender -> {
+                    replaceFragment(calendarFragment)
+                    true
+                }
                 R.id.Settings -> {
-                    // Start the Settings activity instead of replacing a fragment
                     val intent = Intent(this, Settings::class.java)
                     startActivity(intent)
+                    false
                 }
-                R.id.Notification -> replaceFragment(notificationFragment)
-                R.id.Calender -> replaceFragment(calendarFragment)
+                else -> false
             }
-            true
         }
     }
 
@@ -61,3 +81,4 @@ class Home : AppCompatActivity() {
             .commit()
     }
 }
+
