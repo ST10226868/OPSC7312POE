@@ -22,6 +22,7 @@ class Settings : AppCompatActivity() {
     private lateinit var notificationBtn: Button
     private lateinit var languageBtn: Button
     private lateinit var signOutBtn: Button
+    private lateinit var backBtn: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +40,7 @@ class Settings : AppCompatActivity() {
         helpBtn = findViewById(R.id.HelpBtn)
         notificationBtn = findViewById(R.id.NotificationBtn)
         languageBtn = findViewById(R.id.LanguageBtn)
+        backBtn = findViewById(R.id.backBtn)
         signOutBtn = findViewById(R.id.signOut)
 
         loadProfilePicture()
@@ -50,6 +52,11 @@ class Settings : AppCompatActivity() {
         languageBtn.setOnClickListener { showToast("Coming soon") }
         signOutBtn.setOnClickListener { logoutAndCloseApp() }
 
+        backBtn.setOnClickListener {
+            val intent = Intent(this, HomeFragment::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
 
