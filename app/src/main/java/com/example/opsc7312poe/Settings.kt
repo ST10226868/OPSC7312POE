@@ -70,7 +70,7 @@ class Settings : AppCompatActivity() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
 
         if (userId != null) {
-            val profilePictureRef = FirebaseStorage.getInstance().reference.child("profile_pictures/$userId.jpg")
+            val profilePictureRef = FirebaseStorage.getInstance().reference.child("no_pfp.png")
 
             profilePictureRef.downloadUrl.addOnSuccessListener { uri ->
                 Picasso.get()
