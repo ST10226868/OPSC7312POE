@@ -12,6 +12,7 @@ import android.widget.Toast
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+private var email: String? = null
 
 class HomeFragment : Fragment() {
     private var param1: String? = null
@@ -31,6 +32,7 @@ class HomeFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -57,8 +59,13 @@ class HomeFragment : Fragment() {
         val sharedPreferences = requireContext().getSharedPreferences("user_prefs", MODE_PRIVATE)
         val username = sharedPreferences.getString("username", "Guest") // Default to "Guest" if not found
 
+        // Retrieve the email from arguments
+        email = arguments?.getString("email")
+
+        UserDisplay.text = email ?: "No email provided"
         // Set the username in the UserDisplay TextView
-        UserDisplay.text = "Welcome, $username"
+
+       // UserDisplay.text = "Welcome, $username"
 
         // Set click listeners for navigation
         APDS.setOnClickListener { navigateToModuleView("APDS") }

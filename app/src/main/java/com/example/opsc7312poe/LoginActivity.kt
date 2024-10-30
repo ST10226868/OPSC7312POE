@@ -70,6 +70,7 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, Home::class.java)
+                        intent.putExtra("email", email)
                         startActivity(intent)
                         finish()
                     } else {
