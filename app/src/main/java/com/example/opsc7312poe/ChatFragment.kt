@@ -1,59 +1,95 @@
 package com.example.opsc7312poe
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.Timestamp
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ChatFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ChatFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var addNewChatButton: Button
+    private lateinit var recipientEmailEditText: EditText
+    private lateinit var messageEditText: EditText
+    private lateinit var sendMessageButton: Button
+    private lateinit var chatStatusTextView: TextView
+
+    private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat, container, false)
+        val view = inflater.inflate(R.layout.fragment_chat, container, false)
+
+        addNewChatButton = view.findViewById(R.id.addNewChatButton)
+        recipientEmailEditText = view.findViewById(R.id.recipientEmailEditText)
+        messageEditText = view.findViewById(R.id.messageEditText)
+        sendMessageButton = view.findViewById(R.id.sendMessageButton)
+        chatStatusTextView = view.findViewById(R.id.chatStatusTextView)
+
+        addNewChatButton.setOnClickListener {
+            recipientEmailEditText.visibility = View.VISIBLE
+            sendMessageButton.visibility = View.VISIBLE
+            chatStatusTextView.visibility = View.GONE
+        }
+
+        sendMessageButton.setOnClickListener {
+            val recipientEmail = recipientEmailEditText.text.toString()
+            validateEmail(recipientEmail)
+        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ChatFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ChatFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun validateEmail(email: String) {
+        val isValidEmail = email.isNotEmpty() && email.contains("@")
+
+        if (isValidEmail) {
+            chatStatusTextView.text = "Valid email. Please enter your message."
+            chatStatusTextView.visibility = View.VISIBLE
+            messageEditText.visibility = View.VISIBLE
+            sendMessageButton.visibility = View.VISIBLE
+
+            sendMessageButton.setOnClickListener {
+                sendMessage(email, messageEditText.text.toString())
+            }
+        } else {
+            chatStatusTextView.text = "Invalid email."
+            chatStatusTextView.visibility = View.VISIBLE
+            messageEditText.visibility = View.GONE
+            sendMessageButton.visibility = View.GONE
+        }
+    }
+
+    private fun sendMessage(recipientEmail: String, message: String) {
+        val senderEmail = auth.currentUser?.email ?: return
+
+        val messageData = hashMapOf(
+            "sender" to senderEmail,
+            "recipient" to recipientEmail,
+            "content" to message,
+            "timestamp" to Timestamp.now()
+        )
+
+        firestore.collection("messages")
+            .add(messageData)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    chatStatusTextView.text = "Message sent!"
+                    // Optional: Notify recipient (handled in NotificationFragment)
+                } else {
+                    chatStatusTextView.text = "Failed to send message."
                 }
+                chatStatusTextView.visibility = View.VISIBLE
+                messageEditText.setText("")
             }
     }
 }

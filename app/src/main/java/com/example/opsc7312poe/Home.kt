@@ -13,7 +13,7 @@ class Home : AppCompatActivity() {
 
     private val chatFragment = ChatFragment()
     private val notificationFragment = NotificationFragment()
-    private val homeFragment = HomeFragment()
+    private var homeFragment = HomeFragment()
     private val calendarFragment = CalendarFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +21,16 @@ class Home : AppCompatActivity() {
         enableEdgeToEdge()
 
         setContentView(R.layout.activity_home)
+
+        // Get the email passed from LoginActivity
+        val email = intent.getStringExtra("email") ?: "Guest" // Default to "Guest" if not found
+
+        // Initialize HomeFragment and pass the email
+        homeFragment = HomeFragment().apply {
+            arguments = Bundle().apply {
+                putString("email", email) // Pass the email to HomeFragment
+            }
+        }
 
         if (savedInstanceState == null) {
             // Begin the fragment transaction to display the HomeFragment
