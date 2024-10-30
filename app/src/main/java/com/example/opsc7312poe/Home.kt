@@ -78,6 +78,7 @@ class Home : AppCompatActivity() {
                 R.id.Settings -> {
                     val intent = Intent(this, Settings::class.java)
                     startActivity(intent)
+                    this.finish()
                     false
                 }
                 else -> false
