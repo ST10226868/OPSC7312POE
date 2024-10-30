@@ -18,7 +18,7 @@ class Settings : AppCompatActivity() {
     private lateinit var pfpImage: ImageView
     private lateinit var accountBtn: Button
     private lateinit var passwordChangeBtn: Button
-    private lateinit var helpBtn: Button
+    private lateinit var snakeBtn: Button
     private lateinit var notificationBtn: Button
     private lateinit var languageBtn: Button
     private lateinit var signOutBtn: Button
@@ -37,7 +37,7 @@ class Settings : AppCompatActivity() {
         pfpImage = findViewById(R.id.pfpImage)
         accountBtn = findViewById(R.id.AccountBtn)
         passwordChangeBtn = findViewById(R.id.PasswordChangeBtn)
-        helpBtn = findViewById(R.id.HelpBtn)
+        snakeBtn = findViewById(R.id.snakeBtn)
         notificationBtn = findViewById(R.id.NotificationBtn)
         languageBtn = findViewById(R.id.LanguageBtn)
         backBtn = findViewById(R.id.backBtn)
@@ -47,7 +47,7 @@ class Settings : AppCompatActivity() {
 
         accountBtn.setOnClickListener { navigateToAccountSettings() }
         passwordChangeBtn.setOnClickListener { navigateToPasswordChange() }
-        helpBtn.setOnClickListener { showToast("Coming soon") }
+        snakeBtn.setOnClickListener { navigateToSnakeHome() }
         notificationBtn.setOnClickListener { showToast("Coming soon") }
         languageBtn.setOnClickListener { showToast("Coming soon") }
         signOutBtn.setOnClickListener { logoutAndCloseApp() }
@@ -59,6 +59,11 @@ class Settings : AppCompatActivity() {
         }
     }
 
+    private fun navigateToSnakeHome() {
+        val intent = Intent(this, SnakeHomeActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 
 
     private fun navigateToAccountSettings() {
@@ -77,19 +82,27 @@ class Settings : AppCompatActivity() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
 
         if (userId != null) {
-            val profilePictureRef = FirebaseStorage.getInstance().reference.child("no_pfp.png")
+            val userProfilePictureRef = FirebaseStorage.getInstance().reference.child("profile_pictures/$userId.png")
 
-            profilePictureRef.downloadUrl.addOnSuccessListener { uri ->
+            userProfilePictureRef.downloadUrl.addOnSuccessListener { uri ->
                 Picasso.get()
                     .load(uri)
                     .into(findViewById<ImageView>(R.id.pfpImage))
-            }.addOnFailureListener { e ->
-                Toast.makeText(this, "Failed to load profile picture: ${e.message}", Toast.LENGTH_LONG).show()
+            }.addOnFailureListener {
+                val defaultProfilePictureRef = FirebaseStorage.getInstance().reference.child("no_pfp.png")
+                defaultProfilePictureRef.downloadUrl.addOnSuccessListener { uri ->
+                    Picasso.get()
+                        .load(uri)
+                        .into(findViewById<ImageView>(R.id.pfpImage))
+                }.addOnFailureListener { e ->
+                    Toast.makeText(this, "Failed to load profile picture: ${e.message}", Toast.LENGTH_LONG).show()
+                }
             }
         } else {
             Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
         }
     }
+
 
 
     private fun showToast(message: String) {
