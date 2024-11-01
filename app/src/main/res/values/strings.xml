@@ -18,6 +18,13 @@
     <string name="default_web_client_id">610823986766-bhrbjsf7kbg6fpt3gsm68srndcuh5iss.apps.googleusercontent.com</string>
     <string name="snake">SNAKE ⚔︎⚔︎⚔︎</string>
     <string name="high_score_title">HIGH SCORE</string>
+    <string name="leaderboardTitle">LEADERBOARD</string>
+    <string name="rankHeader">Rank</string>
+    <string name="usernameHeader">Username</string>
+    <string name="high_scoreHeader">High Score</string>
+    <string name="snake_breakHeader">SNAKE BREAK</string>
+    <string name="playBtn">PLAY</string>
+    <string name="reset_scoreBtn">RESET SCORE</string>
 
 </resources>
 
