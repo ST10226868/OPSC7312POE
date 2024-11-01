@@ -11,6 +11,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 
 
 class Settings : AppCompatActivity() {
@@ -19,7 +22,6 @@ class Settings : AppCompatActivity() {
     private lateinit var accountBtn: Button
     private lateinit var passwordChangeBtn: Button
     private lateinit var snakeBtn: Button
-    private lateinit var notificationBtn: Button
     private lateinit var languageBtn: Button
     private lateinit var signOutBtn: Button
     private lateinit var backBtn: Button
@@ -38,7 +40,6 @@ class Settings : AppCompatActivity() {
         accountBtn = findViewById(R.id.AccountBtn)
         passwordChangeBtn = findViewById(R.id.PasswordChangeBtn)
         snakeBtn = findViewById(R.id.snakeBtn)
-        notificationBtn = findViewById(R.id.NotificationBtn)
         languageBtn = findViewById(R.id.LanguageBtn)
         backBtn = findViewById(R.id.backBtn)
         signOutBtn = findViewById(R.id.signOut)
@@ -48,15 +49,19 @@ class Settings : AppCompatActivity() {
         accountBtn.setOnClickListener { navigateToAccountSettings() }
         passwordChangeBtn.setOnClickListener { navigateToPasswordChange() }
         snakeBtn.setOnClickListener { navigateToSnakeHome() }
-        notificationBtn.setOnClickListener { showToast("Coming soon") }
         languageBtn.setOnClickListener { showToast("Coming soon") }
         signOutBtn.setOnClickListener { logoutAndCloseApp() }
 
         backBtn.setOnClickListener {
-            val intent = Intent(this, HomeFragment::class.java)
-            startActivity(intent)
             finish()
         }
+    }
+
+    fun isOnline(context: Context): Boolean {
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork ?: return false
+        val networkCapabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+        return networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 
     private fun navigateToSnakeHome() {
@@ -79,10 +84,16 @@ class Settings : AppCompatActivity() {
 
 
     private fun loadProfilePicture() {
+        if (!isOnline(this)) {
+            // Device is offline - show offline indicator on profile picture
+            pfpImage.setImageResource(R.drawable.offline_placeholder)
+            Toast.makeText(this, "You're offline.", Toast.LENGTH_LONG).show()
+            return
+        }
         val userId = FirebaseAuth.getInstance().currentUser?.uid
 
         if (userId != null) {
-            val userProfilePictureRef = FirebaseStorage.getInstance().reference.child("profile_pictures/$userId.png")
+            val userProfilePictureRef = FirebaseStorage.getInstance().reference.child("profile_pictures/$userId.jpg")
 
             userProfilePictureRef.downloadUrl.addOnSuccessListener { uri ->
                 Picasso.get()
@@ -110,8 +121,16 @@ class Settings : AppCompatActivity() {
     }
 
     private fun logoutAndCloseApp() {
+        clearHighScore()
         FirebaseAuth.getInstance().signOut()
         Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show()
         finishAffinity() // Close the app
+    }
+
+    // Clear high score from SharedPreferences
+    private fun clearHighScore() {
+        val sharedPrefs = getSharedPreferences("SnakeGamePrefs", Context.MODE_PRIVATE)
+        sharedPrefs.edit().remove("high_score").apply()
+        Toast.makeText(this, "High score cleared.", Toast.LENGTH_SHORT).show()
     }
 }

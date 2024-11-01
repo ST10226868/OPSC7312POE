@@ -5,4 +5,6 @@
     <color name="lightBackground">#F9F7ED</color>
     <color name="lightTitle">#693D24</color>
     <color name="ButtonLight">#274001</color>
+    <color name="red">#FD0000</color>
+    <color name="green">#3AFF0E</color>
 </resources>
