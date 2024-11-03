@@ -1,5 +1,5 @@
 package com.example.opsc7312poe
-
+//Updated with Language system
 import android.app.Application
 import com.example.opsc7312poe.utils.HighScoreManager
 import com.example.opsc7312poe.utils.LocaleHelper

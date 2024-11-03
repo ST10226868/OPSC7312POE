@@ -18,7 +18,7 @@ class Language : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_language)
-
+        //Local Language assistent
         localeHelper = LocaleHelper()
 
         englishBtn = findViewById(R.id.EnglishBtn)

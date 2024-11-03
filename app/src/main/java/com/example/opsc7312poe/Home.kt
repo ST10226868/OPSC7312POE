@@ -14,7 +14,7 @@ class Home : AppCompatActivity() {
     private val chatFragment = ChatFragment()
     private val notificationFragment = NotificationFragment()
     private var homeFragment = HomeFragment()
-    private val calendarFragment = CalendarFragment()
+   // private val calendarFragment = CalendarFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,7 +72,8 @@ class Home : AppCompatActivity() {
                     true
                 }
                 R.id.Calender -> {
-                    replaceFragment(calendarFragment)
+                    //calanderFragment (Fragment didnt exist)
+                    replaceFragment(notificationFragment)
                     true
                 }
                 R.id.Settings -> {
