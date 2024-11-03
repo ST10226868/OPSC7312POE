@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <TextView
         android:id="@+id/textView2"
@@ -14,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:text="This is home fragment"
+        android:text="WELCOME"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +102,6 @@
         android:id="@+id/UserDisplay"
         android:layout_width="133dp"
         android:layout_height="41dp"
-        android:text="Welcome"
         app:layout_constraintBottom_toTopOf="@+id/APDS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
