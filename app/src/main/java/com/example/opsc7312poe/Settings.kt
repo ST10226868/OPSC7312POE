@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
@@ -16,7 +15,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 
 
-class Settings : AppCompatActivity() {
+class Settings : BaseActivity() {
 
     private lateinit var pfpImage: ImageView
     private lateinit var accountBtn: Button
@@ -49,12 +48,18 @@ class Settings : AppCompatActivity() {
         accountBtn.setOnClickListener { navigateToAccountSettings() }
         passwordChangeBtn.setOnClickListener { navigateToPasswordChange() }
         snakeBtn.setOnClickListener { navigateToSnakeHome() }
-        languageBtn.setOnClickListener { showToast("Coming soon") }
+        languageBtn.setOnClickListener { navigateToLanguagePage() }
         signOutBtn.setOnClickListener { logoutAndCloseApp() }
 
         backBtn.setOnClickListener {
             finish()
         }
+    }
+
+    private fun navigateToLanguagePage() {
+        val intent = Intent(this, Language::class.java)
+        startActivity(intent)
+        finish()
     }
 
     fun isOnline(context: Context): Boolean {
@@ -114,11 +119,6 @@ class Settings : AppCompatActivity() {
         }
     }
 
-
-
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
 
     private fun logoutAndCloseApp() {
         clearHighScore()

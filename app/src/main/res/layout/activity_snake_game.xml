@@ -12,7 +12,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@color/green"
-        android:text="score"
+        android:text="@string/scoreGameRunning"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -46,7 +46,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="140dp"
             android:background="@color/black"
-            android:text="your score is"
+            android:text="@string/score"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="15sp"
@@ -61,7 +61,7 @@
             android:layout_marginBottom="10dp"
             android:background="#DAE99C"
             android:backgroundTint="#DAE99C"
-            android:text="New Game"
+            android:text="@string/new_game"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:layout_above="@id/resume">
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:background="#DAE99C"
-            android:text="Resume Game"
+            android:text="@string/resumeGame"
             android:textAlignment="center"/>
 
         <Button
@@ -85,7 +85,7 @@
             android:layout_marginTop="10dp"
             android:layout_below="@id/resume"
             android:background="#DAE99C"
-            android:text="Back"
+            android:text="@string/backBtn"
             android:textAlignment="center"
             android:textColor="@color/black" />
 
@@ -98,7 +98,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="100dp"
             android:background="@color/red"
-            android:text="Game Over ! Play Again"
+            android:text="@string/GameOver"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />

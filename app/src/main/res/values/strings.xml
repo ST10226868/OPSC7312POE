@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OPSC7312POE</string>
+    <string name="app_name">PDTuitions</string>
     <string name="settingsTitle">SETTINGS</string>
     <string name="account">ACCOUNT</string>
     <string name="backBtn">BACK</string>
@@ -15,7 +15,6 @@
     <string name="logout">LOGOUT</string>
     <string name="new_chat">NEW CHAT</string>
     <string name="chat">CHAT</string>
-    <string name="default_web_client_id">610823986766-bhrbjsf7kbg6fpt3gsm68srndcuh5iss.apps.googleusercontent.com</string>
     <string name="snake">SNAKE ⚔︎⚔︎⚔︎</string>
     <string name="high_score_title">HIGH SCORE</string>
     <string name="leaderboardTitle">LEADERBOARD</string>
@@ -25,7 +24,12 @@
     <string name="snake_breakHeader">SNAKE BREAK</string>
     <string name="playBtn">PLAY</string>
     <string name="reset_scoreBtn">RESET SCORE</string>
-
+    <string name="GameOver">Game Over ! Play Again</string>
+    <string name="resumeGame">Resume Game</string>
+    <string name="new_game">New Game</string>
+    <string name="score">your score is</string>
+    <string name="scoreGameRunning">score</string>
+    <string name="default_web_client_id">610823986766-bhrbjsf7kbg6fpt3gsm68srndcuh5iss.apps.googleusercontent.com</string>
 </resources>
 
 

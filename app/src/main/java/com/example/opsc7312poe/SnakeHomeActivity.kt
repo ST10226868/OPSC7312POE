@@ -9,12 +9,11 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import com.example.opsc7312poe.utils.HighScoreManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class SnakeHomeActivity : AppCompatActivity() {
+class SnakeHomeActivity : BaseActivity() {
 
     private lateinit var highScoreNum : TextView
     private lateinit var playBtn: Button

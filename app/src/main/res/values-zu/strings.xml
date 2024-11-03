@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PDTuitions</string>
+    <string name="settingsTitle">IZILUNGISELELO</string>
+    <string name="account">I-AKHAUNTI</string>
+    <string name="backBtn">BUYA EMUVA</string>
+    <string name="change_password">SHINTSHA I-PHASIWEDI</string>
+    <string name="notifications">IZAZISO</string>
+    <string name="language">ULIMI</string>
+    <string name="save">GCINA</string>
+    <string name="first_name">Igama Lokuqala</string>
+    <string name="surname">Isibongo</string>
+    <string name="email">I-imeyili</string>
+    <string name="student_number">Inombolo Yomfundi</string>
+    <string name="help">USIZO</string>
+    <string name="logout">PHUMA</string>
+    <string name="new_chat">INGXOXO ENTSHA</string>
+    <string name="chat">INGXOXO</string>
+    <string name="snake">INYOKA ⚔︎⚔︎⚔︎</string>
+    <string name="high_score_title">AMAMAKI APHEZULU</string>
+    <string name="leaderboardTitle">IBHODI YOKUHOLA</string>
+    <string name="rankHeader">Izinga</string>
+    <string name="usernameHeader">Igama Lomsebenzisi</string>
+    <string name="high_scoreHeader">Amamaki Aphezulu</string>
+    <string name="snake_breakHeader">IKHEFU LENYOKA</string>
+    <string name="playBtn">DLALA</string>
+    <string name="reset_scoreBtn">SUSA AMAMAKI</string>
+    <string name="GameOver">Umdlalo Uphelile! Dlala Futhi</string>
+    <string name="resumeGame">Qhubeka Nomdlalo</string>
+    <string name="new_game">Umdlalo Omusha</string>
+    <string name="score">isibalo sakho</string>
+    <string name="scoreGameRunning">isibalo</string>
+
+</resources>

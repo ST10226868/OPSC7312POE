@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PDTuitions</string>
+    <string name="settingsTitle">INSTELLINGS</string>
+    <string name="account">REKENING</string>
+    <string name="backBtn">TERUG</string>
+    <string name="change_password">VERANDER WAGWOORD</string>
+    <string name="notifications">KENNISGEWINGS</string>
+    <string name="language">TAAL</string>
+    <string name="save">STOOR</string>
+    <string name="first_name">Voornaam</string>
+    <string name="surname">Van</string>
+    <string name="email">E-pos</string>
+    <string name="student_number">Studentenommer</string>
+    <string name="help">HULP</string>
+    <string name="logout">TEKEN UIT</string>
+    <string name="new_chat">NUWE KLETS</string>
+    <string name="chat">KLETS</string>
+    <string name="snake">SLANG ⚔︎⚔︎⚔︎</string>
+    <string name="high_score_title">HOë PUNTE</string>
+    <string name="leaderboardTitle">LEIERBORD</string>
+    <string name="rankHeader">Rang</string>
+    <string name="usernameHeader">Gebruikersnaam</string>
+    <string name="high_scoreHeader">Hoë Punte</string>
+    <string name="snake_breakHeader">SLANG PAUSE</string>
+    <string name="playBtn">SPEEL</string>
+    <string name="reset_scoreBtn">HERSTEL PUNTE</string>
+    <string name="GameOver">Speletjie Verby! Speel Weer</string>
+    <string name="resumeGame">Hervat Speletjie</string>
+    <string name="new_game">Nuwe Speletjie</string>
+    <string name="score">jou punt is</string>
+    <string name="scoreGameRunning">punt</string>
+
+</resources>

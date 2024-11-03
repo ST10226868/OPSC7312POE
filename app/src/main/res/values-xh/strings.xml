@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PDTuitions</string>
+    <string name="settingsTitle">ISETTINGS</string>
+    <string name="account">AKHAWUNTI</string>
+    <string name="backBtn">BUYA</string>
+    <string name="change_password">GUQUKA IGAMA LOKUNGENA</string>
+    <string name="notifications">IZAZISO</string>
+    <string name="language">ULWIMI</string>
+    <string name="save">GCINA</string>
+    <string name="first_name">Igama Lokuqala</string>
+    <string name="surname">Ifani</string>
+    <string name="email">Imeyile</string>
+    <string name="student_number">Inombolo Yomfundi</string>
+    <string name="help">UNCEDO</string>
+    <string name="logout">PHUMA</string>
+    <string name="new_chat">INTETHO ENTSHA</string>
+    <string name="chat">INTETHO</string>
+    <string name="snake">INYOKA ⚔︎⚔︎⚔︎</string>
+    <string name="high_score_title">AMANQAKU APHAKAMILEYO</string>
+    <string name="leaderboardTitle">IBHODI YEENKOKHELELO</string>
+    <string name="rankHeader">Inqanaba</string>
+    <string name="usernameHeader">Igama Lomsebenzisi</string>
+    <string name="high_scoreHeader">Amanqaku Aphakamileyo</string>
+    <string name="snake_breakHeader">IKHEFU LENYOKA</string>
+    <string name="playBtn">DLALA</string>
+    <string name="reset_scoreBtn">SETSA KWAKHONA</string>
+    <string name="GameOver">Umdlalo Ugqityiwe! Dlala Kwakhona</string>
+    <string name="resumeGame">Qhubeka Nomdlalo</string>
+    <string name="new_game">Umdlalo Omtsha</string>
+    <string name="score">inqaku lakho ngu</string>
+    <string name="scoreGameRunning">inqaku</string>
+
+</resources>
