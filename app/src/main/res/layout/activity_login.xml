@@ -8,12 +8,11 @@
     android:padding="16dp"
     android:background="@color/white">
 
-    <!-- Welcome Text -->
     <TextView
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text=" Please Login"
         android:textSize="22sp"
         android:layout_marginBottom="20dp"/>
 
@@ -40,8 +39,16 @@
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login with Email and Password"
+        android:text="Login "
         android:layout_marginBottom="20dp"/>
+
+    <!-- Button for Google Sign-In -->
+    <Button
+        android:id="@+id/google_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign in with Google"
+        android:layout_marginBottom="10dp"/>
 
     <!-- Button for Biometric Authentication -->
     <Button

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SnakeGameActivity"
+    android:background="@color/lightBackground">
+
+    <TextView
+        android:id="@+id/HighScoreView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/high_score_title"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/scoreNum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SettingsTitle" />
+
+    <TextView
+        android:id="@+id/scoreNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="248dp"
+        android:text="0"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HighScoreView" />
+
+    <TextView
+        android:id="@+id/SettingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/snake_breakHeader"
+        android:textColor="@color/lightTitle"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:text="@string/playBtn"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SettingsTitle"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/LeaderboardButton"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:text="@string/leaderboardTitle"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playButton" />
+
+    <Button
+        android:id="@+id/RestButton"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:text="@string/reset_scoreBtn"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LeaderboardButton" />
+
+    <Button
+        android:id="@+id/BackButton"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:text="@string/backBtn"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RestButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,25 +15,18 @@
         android:layout_marginBottom="20dp" />
 
     <EditText
-        android:id="@+id/nameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/surnameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Surname"
-        android:inputType="textPersonName" />
-
-    <EditText
         android:id="@+id/studentNumberEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Student Number"
-        android:inputType="number" />
+        android:hint="@string/student_number"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/emailEditText"
@@ -62,4 +55,10 @@
         android:layout_height="wrap_content"
         android:text="Register"
         android:layout_marginTop="20dp" />
+    <Button
+        android:id="@+id/googleSignInButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign in with Google"
+        android:layout_marginBottom="20dp"/>
 </LinearLayout>

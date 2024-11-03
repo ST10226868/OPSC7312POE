@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">OPSC7312POE</string>
+    <string name="settingsTitle">SETTINGS</string>
+    <string name="account">ACCOUNT</string>
+    <string name="backBtn">BACK</string>
+    <string name="change_password">CHANGE PASSWORD</string>
+    <string name="notifications">NOTIFICATIONS</string>
+    <string name="language">LANGUAGE</string>
+    <string name="save">SAVE</string>
+    <string name="first_name">First Name</string>
+    <string name="surname">Surname</string>
+    <string name="email">Email</string>
+    <string name="student_number">Student Number</string>
+    <string name="help">HELP</string>
+    <string name="logout">LOGOUT</string>
+    <string name="new_chat">NEW CHAT</string>
+    <string name="chat">CHAT</string>
+    <string name="default_web_client_id">610823986766-bhrbjsf7kbg6fpt3gsm68srndcuh5iss.apps.googleusercontent.com</string>
+    <string name="snake">SNAKE ⚔︎⚔︎⚔︎</string>
+    <string name="high_score_title">HIGH SCORE</string>
+    <string name="leaderboardTitle">LEADERBOARD</string>
+    <string name="rankHeader">Rank</string>
+    <string name="usernameHeader">Username</string>
+    <string name="high_scoreHeader">High Score</string>
+    <string name="snake_breakHeader">SNAKE BREAK</string>
+    <string name="playBtn">PLAY</string>
+    <string name="reset_scoreBtn">RESET SCORE</string>
+
 </resources>
+
+
+    <!--  -->

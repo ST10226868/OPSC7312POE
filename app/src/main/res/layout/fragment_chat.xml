@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/addNewChatButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Chat" />
+
+    <EditText
+        android:id="@+id/recipientEmailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter recipient email"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/messageEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your message"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/sendMessageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Message"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/chatStatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:visibility="gone"/>
+
+</LinearLayout>
