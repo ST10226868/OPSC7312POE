@@ -11,7 +11,6 @@ class Language : BaseActivity() {
     private lateinit var isiZuluBtn: Button
     private lateinit var afrikaansBtn: Button
     private lateinit var xhosaBtn: Button
-    private lateinit var translatorBtn: Button
     private lateinit var backBtn: Button
     private lateinit var localeHelper: LocaleHelper
 
@@ -26,7 +25,6 @@ class Language : BaseActivity() {
         isiZuluBtn = findViewById(R.id.IsiZuluBtn)
         afrikaansBtn = findViewById(R.id.AfrikaansBtn)
         xhosaBtn = findViewById(R.id.XhosaBtn)
-        translatorBtn = findViewById(R.id.TranslatorBtn)
 
         backBtn.setOnClickListener {
             val intent = Intent(this, Settings::class.java)
