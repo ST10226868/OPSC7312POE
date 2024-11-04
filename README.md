@@ -78,7 +78,7 @@ git clone [https://github.com/(https://github.com/just-makab/Check_Box.git)](htt
 ## License
 - Open Source
 
-## Feature Vide0
+## Feature Video
 https://youtu.be/iwgU-ubtYYk
 
 ## Creators
