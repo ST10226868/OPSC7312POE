@@ -2,41 +2,76 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:gravity="center|top"
+    android:padding="16dp"
+    android:background="@color/lightBackground">
 
     <Button
         android:id="@+id/addNewChatButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add New Chat" />
+        android:text="Add New Chat"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        app:cornerRadius="14dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
         android:id="@+id/recipientEmailEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter recipient email"
-        android:visibility="gone" />
+        android:hint="@string/email_request"
+        android:visibility="gone"
+
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_text_field"
+        android:drawablePadding="10dp"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/messageEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:hint="Enter your message"
-        android:visibility="gone" />
+        android:visibility="gone"
+
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_text_field"
+        android:drawablePadding="10dp"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:id="@+id/sendMessageButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="Send Message"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        app:cornerRadius="14dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/chatStatusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
 </LinearLayout>

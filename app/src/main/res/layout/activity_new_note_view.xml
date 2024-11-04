@@ -5,70 +5,87 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewNoteView">
+    tools:context=".NewNoteView"
+    android:background="@color/lightBackground">
 
     <TextView
         android:id="@+id/ModuleTitle"
-        android:layout_width="133dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="144dp"
-        android:text="New Note"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.085" />
-
-    <Button
-        android:id="@+id/SaveNote"
+        android:text="@string/new_note"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Note"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795" />
-
-    <Button
-        android:id="@+id/Back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795" />
-
-
-    <EditText
-        android:id="@+id/editTextTextMultiLine"
-        android:layout_width="343dp"
-        android:layout_height="232dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/lightTitle"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/Note_Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
+        android:hint="@string/note_title"
         android:inputType="text"
-        android:text="Note Title"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_text_field"
+        android:drawablePadding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/ModuleTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="320dp"
+        android:layout_height="330dp"
+        android:hint="@string/description"
+        android:inputType="textMultiLine"
+        android:gravity="start"
+        android:ems="10"
+        android:layout_marginBottom="20dp"
+        android:lineSpacingExtra="10sp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/SaveNote"
+        android:background="@drawable/custom_text_field"
+        android:drawablePadding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"  />
+
+
+    <Button
+        android:id="@+id/SaveNote"
+        android:text="@string/save_note"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        app:cornerRadius="14dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        :layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/Back"
+        android:text="@string/backBtn"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        app:cornerRadius="14dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

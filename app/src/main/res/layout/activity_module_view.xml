@@ -5,57 +5,37 @@
     android:id="@+id/ModuleView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ModuleView">
+    tools:context=".ModuleView"
+    android:background="@color/lightBackground">
 
 
     <TextView
         android:id="@+id/ModuleTitle"
-        android:layout_width="209dp"
-        android:layout_height="56dp"
-        android:text="Module Title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="MODULE TITLE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/lightTitle"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.574"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.103" />
-
-    <Button
-        android:id="@+id/SelectTutor"
-        android:layout_width="178dp"
-        android:layout_height="51dp"
-        android:text="Select a tutor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Notes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Notes"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="NOTES"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        app:cornerRadius="14dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@id/Back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <Button
-        android:id="@+id/Back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812" />
 
     <TextView
         android:id="@+id/textView"
@@ -66,8 +46,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SelectTutor"
+        app:layout_constraintTop_toBottomOf="@+id/ModuleTitle"
         app:layout_constraintVertical_bias="0.319" />
+
+    <Button
+        android:id="@+id/Back"
+        android:text="@string/backBtn"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        app:cornerRadius="14dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

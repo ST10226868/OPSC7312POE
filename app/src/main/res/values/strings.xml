@@ -30,6 +30,11 @@
     <string name="score">your score is</string>
     <string name="scoreGameRunning">score</string>
     <string name="default_web_client_id">610823986766-bhrbjsf7kbg6fpt3gsm68srndcuh5iss.apps.googleusercontent.com</string>
+    <string name="new_note">NEW NOTE</string>
+    <string name="note_title">Note Title</string>
+    <string name="description">Description</string>
+    <string name="save_note">Save Note</string>
+    <string name="email_request">Enter recipient email</string>
 </resources>
 
 

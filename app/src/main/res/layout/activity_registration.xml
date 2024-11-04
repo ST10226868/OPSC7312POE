@@ -2,68 +2,128 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:background="@color/lightBackground"
     android:gravity="center">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:src="@drawable/banner"/>
 
     <TextView
         android:id="@+id/welcome_text"
+        android:text="REGISTER"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:textSize="22sp"
-        android:layout_marginBottom="20dp" />
+        android:textColor="@color/lightTitle"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/pfp_frame"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
+        android:layout_marginTop="10dp"/>
+
+
 
     <EditText
         android:id="@+id/studentNumberEditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:hint="@string/student_number"
-        android:inputType="text" />
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_text_field"
+        android:drawablePadding="10dp"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"/>
 
     <EditText
         android:id="@+id/usernameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:hint="User Name"
-        android:inputType="textPersonName" />
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_text_field"
+        android:drawablePadding="10dp"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp" />
 
     <EditText
         android:id="@+id/emailEditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:hint="Email"
-        android:inputType="textEmailAddress" />
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_text_field"
+        android:drawablePadding="10dp"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp" />
 
     <EditText
         android:id="@+id/passwordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:hint="Password"
-        android:inputType="textPassword" />
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_text_field"
+        android:drawablePadding="10dp"
+        android:inputType="textPassword"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/confirmPasswordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:hint="Confirm Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_text_field"
+        android:drawablePadding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp" />
 
     <Button
         android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="Register"
-        android:layout_marginTop="20dp" />
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        app:cornerRadius="14dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:text="REGISTER"
+        />
+
     <Button
         android:id="@+id/googleSignInButton"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Sign in with Google"
-        android:layout_marginBottom="20dp"/>
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        app:cornerRadius="14dp"
+        android:backgroundTint="@color/ButtonLight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Sign in with Google" />
 </LinearLayout>
