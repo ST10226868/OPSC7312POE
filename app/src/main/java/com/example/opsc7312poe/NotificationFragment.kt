@@ -1,14 +1,20 @@
 package com.example.opsc7312poe
 
-import android.annotation.SuppressLint
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 
 class NotificationFragment : Fragment() {
@@ -18,7 +24,6 @@ class NotificationFragment : Fragment() {
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private lateinit var messageListener: ListenerRegistration
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,12 +53,35 @@ class NotificationFragment : Fragment() {
                         val messageContent = doc.getString("content")
                         val sender = doc.getString("sender")
                         messages.append("New message from $sender: $messageContent\n")
+
+                        // Trigger notification for each new message
+                        showNotification(requireContext(), sender ?: "Unknown", messageContent ?: "")
                     }
                     notificationsTextView.text = messages.toString()
                 } else {
                     notificationsTextView.text = "No new messages."
                 }
             }
+    }
+
+    private fun showNotification(context: Context, sender: String, message: String) {
+        val channelId = "messages_channel"
+        val notificationId = System.currentTimeMillis().toInt() // Unique ID for each notification
+
+        // Check if permission is granted
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
+            val notification = NotificationCompat.Builder(context, channelId)
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle("New message from $sender")
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setAutoCancel(true)
+                .build()
+
+            NotificationManagerCompat.from(context).notify(notificationId, notification)
+        } else {
+            Toast.makeText(context, "Notification permission is not granted", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroy() {

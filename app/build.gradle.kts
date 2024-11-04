@@ -52,8 +52,15 @@ dependencies {
 
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("com.google.android.gms:play-services-auth:20.4.0")
-
+    implementation(libs.androidx.junit.ktx)
     testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("com.google.firebase:firebase-messaging:23.1.2")
+
+    //Test files
+    testImplementation("org.mockito:mockito-core:5.0.0")
+    testImplementation("org.mockito:mockito-inline:5.0.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.0.0")
 }
