@@ -4,14 +4,12 @@ PDTutions is a little app that makes getting tutions easy
 
 
 ## Features
-- User authentication (login/Register)
-- Note Creation and storage
-- Easy to use Chat system
-- Easy Scheduling, Letting you see what you have waiting for you in one place
+- Easy Chat system with Tutors
+- Fun Snake Game for Break Time
+- Competitive Leaderboard: to add some fun during those breaks
+- Easy Task Scheduling: Letting you see what you have waiting for you in one place
+- Simple Notes: allowing you to store all your study notes in one place
 
-## Future features 
-- AI help bot
-- Export to Calander
 
 # How to insteall the app from Github
 
@@ -77,9 +75,6 @@ git clone [https://github.com/(https://github.com/just-makab/Check_Box.git)](htt
 4. Finally click save and your event will be scheduled 
 
 
-## Future Updates
-- Dark mode
-
 ## License
 - Open Source
 
@@ -87,9 +82,9 @@ git clone [https://github.com/(https://github.com/just-makab/Check_Box.git)](htt
 [https://youtu.be/E4pUAUzwo0I ](https://youtu.be/N3ZeTu14YP8)
 
 ## Creators
-Nkosinomusa Hadebe ST10027180
-Thabani Shabalala ST10226868
-Makabongwe Sibisi ST10145439
-Lindokuhle Njoko ST10021160
+1. Nkosinomusa Hadebe ST10027180 
+2. Thabani Shabalala ST10226868
+3. Makabongwe Sibisi ST10145439
+4. Lindokuhle Njoko ST10021160
 
 
