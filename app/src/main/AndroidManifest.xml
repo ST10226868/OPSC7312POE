@@ -17,9 +17,6 @@
         android:theme="@style/Theme.OPSC7312POE"
         tools:targetApi="31">
         <activity
-            android:name=".Translator"
-            android:exported="false" />
-        <activity
             android:name=".Language"
             android:exported="false" />
         <activity
